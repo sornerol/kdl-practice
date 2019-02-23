@@ -1,0 +1,54 @@
+86
+Poppy Bros 3rd Bomb
+161
+Whispy 1
+182
+Whispy 2
+276
+Lololo curry grab
+290
+Entering Lololo boss
+419
+Kabula
+448
+BC Rm 1
+645
+Kracko 1
+659
+Kracko 2
+671
+Kracko 3
+684
+Kracko 4
+694
+Kracko 5
+706
+Kracko 6
+748
+RF Whispy 1
+766
+RF Whispy 2
+799
+RF Kabula
+840
+RF Kracko 1
+851
+RF Kracko 2
+861
+RF Kracko 3
+871
+RF Kracko 4
+883
+RF Kracko 5
+898
+RF Kracko 6
+915
+RF Lololo
+981
+Dedede 1
+993
+Dedede 2
+1000
+Dedede 3
+9999
+END OF RNG PROGRESSION
