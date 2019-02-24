@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License along with
 this program. If not, see <http://www.gnu.org/licenses/>.
 ]]
 
-curr_version = "v.1.0"
+curr_version = "1.0.0"
 
 --rng_seed_progression is a list of rng seed values in the order they appear in
 --KDL. The list goes to 5,000 values currently.
@@ -208,7 +208,7 @@ end
 
 local function update_display()
 	-- format our status overview string, then display it on screen
-	local status_string = string.format("%s\nRNG Seed #: %i\nSeed: %.4X",curr_version, rng_changes, last_seed)
+	local status_string = string.format("RNG Seed #: %i\nSeed: %.4X\n%s", rng_changes, last_seed,curr_version)
 	gui.text(5,5,status_string,null,"bottomright")
 
 	-- we'll change the checkpoint string color if we're close to a checkpoint
