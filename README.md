@@ -2,7 +2,7 @@
 The KDL Practice Script helps speedrunners of Kirby's Dream Land practice speedrun tech. It is a Lua script that runs within the BizHawk emulator. Currently, its only use is for practicing RNG manipulation, but more features are coming soon.
 
 # Next Steps
-* Download and install the script
+* [Download and install the script](https://github.com/sornerol/kdl-practice/releases)
 * [Visit the Wiki](https://github.com/sornerol/kdl-practice/wiki) for the User Guide and explanation of how RNG behaves in KDL.
 
 # Credits
