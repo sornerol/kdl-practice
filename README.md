@@ -12,5 +12,5 @@ KDL Practice Script is developed by Speedman:
 * Speedrun.com: [speedman](https://www.speedrun.com/user/speedman)
 
 # Special Thanks
-* Thank you to mugg1991 for publishing his initial findings on how RNG works in KDL.
-* Thank you to BelthicGaming for sharing his vast KDL knowledge.
+* Thanks to mugg1991 for publishing his initial findings on how RNG works in KDL.
+* Thanks to BelthicGaming for sharing his vast KDL knowledge.
