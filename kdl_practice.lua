@@ -1,4 +1,4 @@
-[[
+--[[
 This file is part of KDL Practice Script.
 
 This program is free software: you can redistribute it and/or modify it under
@@ -13,7 +13,7 @@ details.
 
 You should have received a copy of the GNU General Public License along with
 this program. If not, see <http://www.gnu.org/licenses/>.
-]]
+--]]
 
 curr_version = "1.0.0"
 
@@ -208,7 +208,7 @@ end
 
 local function update_display()
 	-- format our status overview string, then display it on screen
-	local status_string = string.format("RNG Seed #: %i\nSeed: %.4X\n%s", rng_changes, last_seed,curr_version)
+	local status_string = string.format("RNG Seed #: %i\nSeed: %.4X\nv%s", rng_changes, last_seed, curr_version)
 	gui.text(5,5,status_string,null,"bottomright")
 
 	-- we'll change the checkpoint string color if we're close to a checkpoint
