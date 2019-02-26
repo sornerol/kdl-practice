@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License along with
 this program. If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-curr_version = "1.0.0"
+curr_version = "1.0.1"
 
 --rng_seed_progression is a list of rng seed values in the order they appear in
 --KDL. The list goes to 5,000 values currently.
