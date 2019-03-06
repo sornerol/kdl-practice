@@ -42,13 +42,25 @@ RF Kracko 4
 RF Kracko 5
 898
 RF Kracko 6
+907
+Enter Lololo door
 915
 RF Lololo
-981
+962
+Enter Dedede
+964
 Dedede 1
-993
+974
 Dedede 2
-1000
+983
 Dedede 3
+993
+Dedede 4
+1001
+Dedede 5
+1013
+Dedede 6
+1026
+Dedede 7
 9999
 END OF RNG PROGRESSION
