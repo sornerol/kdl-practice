@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License along with
 this program. If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-curr_version = "1.0.1"
+curr_version = "1.1.0-beta.20190313"
 
 --rng_seed_progression is a list of rng seed values in the order they appear in
 --KDL. The list goes to 5,000 values currently.
@@ -213,6 +213,8 @@ local function update_display()
 
 	-- we'll change the checkpoint string color if we're close to a checkpoint
 	local checkpoint_string_color = "white"
+	-- we use this to visualize when TAS spit is charged. 
+	local checkpoint_string_background = nil
 	
 	-- calculate how far we are to the next checkpoint
 	local distance_to_checkpoint = checkpoints_list[curr_checkpoint][1] - rng_changes
@@ -226,6 +228,14 @@ local function update_display()
 		checkpoint_string_color = "yellow"
 	end
 	
+	-- check for TAS spit charge and change the background color if necessary
+	local tas_spit_byte = memory.readbyte(0x1094)
+	if(bit.band(tas_spit_byte,4))
+	then
+		checkpoint_string_background = "DarkRed"
+	end
+	
+	
 	-- generate and display the checkpoint status string
 	local checkpoint_string = string.format("Next: %i: %s\n",checkpoints_list[curr_checkpoint][1],checkpoints_list[curr_checkpoint][2])
 
@@ -237,7 +247,7 @@ local function update_display()
 	else
 		checkpoint_string = checkpoint_string .. status_bar[distance_to_checkpoint + 1]
 	end
-	gui.pixelText(15,122,checkpoint_string,checkpoint_string_color)
+	gui.pixelText(15,122,checkpoint_string,checkpoint_string_color, checkpoint_string_background)
 end
 
 local function initialize_checkpoints()
