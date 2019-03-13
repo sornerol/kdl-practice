@@ -239,8 +239,7 @@ local function update_display()
 	end
 	
 	-- check for TAS spit charge and change the background color if necessary
-	local tas_spit_byte = memory.readbyte(0x1094)
-	if(bit.band(tas_spit_byte,4))
+	if(bit.band(memory.readbyte(0x1094,"WRAM"),4) == 4)
 	then
 		checkpoint_string_background = "DarkRed"
 	end
@@ -257,7 +256,7 @@ local function update_display()
 	else
 		checkpoint_string = checkpoint_string .. status_bar[distance_to_checkpoint + 1]
 	end
-	gui.pixelText(15,122,checkpoint_string,checkpoint_string_color, checkpoint_string_background)
+	gui.pixelText(15,118,checkpoint_string,checkpoint_string_color, checkpoint_string_background)
 end
 
 local function initialize_checkpoints()
