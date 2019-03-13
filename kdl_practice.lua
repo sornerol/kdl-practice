@@ -17,6 +17,7 @@ this program. If not, see <http://www.gnu.org/licenses/>.
 
 curr_version = "1.1.0-beta.20190313"
 
+
 --rng_seed_progression is a list of rng seed values in the order they appear in
 --KDL. The list goes to 5,000 values currently.
 
@@ -174,6 +175,15 @@ rng_seed_progression = {
 , 45919, 4863, 4549, 55016, 48848, 36453, 62385, 42035, 55242, 41286, 59326, 42311, 60627, 48997, 9233, 13812, 10574, 30636, 9037, 28903, 22395, 53826, 5228, 32850, 53990, 47161, 61891, 46189, 8467, 13544, 7230, 23182, 59396, 
 60486, 12827, 19769, 34488, 16012, 51792, 6745}
 
+-- kdl_hash is a list of hash values for valid KDL ROMs.
+-- Includes both US and Japanese ROM hashes
+
+kdl_hash = {
+"90979BAA1D0E24B41B5C304C5DDAF77450692D5A",
+"5FE35FAB25299B6C53B40DECFE2B1827B4A64D2A",
+"1E34B7BEEE30E350087771B3A3E05A40E4A1EA84"
+}
+
 -- status_bar is used for displaying a status bar when close to a checkpoint
 status_bar = {
 "|--------GOOD--------|",
@@ -253,7 +263,8 @@ end
 local function initialize_checkpoints()
 	local checkpoints_file = assert(io.open("kdl_checkpoints.txt", "r"))
 	io.input(checkpoints_file)
-
+	
+	print("Loading checkpoints...")
 	local i = 1
 	checkpoints_list = {}
 	repeat
@@ -264,6 +275,7 @@ local function initialize_checkpoints()
 		checkpoints_list[i][2] = description
 		i = i + 1
 	until(io.read(0) == nil)
+	print("Found ".. i - 1 .." checkpoints")
 	io.close(checkpoints_file)
 end
 
@@ -286,6 +298,25 @@ local function update_checkpoint()
 	
 end
 
+-- BEGINNING OF SCRIPT EXECUTION
+
+print("\n\nKDL Practice Script v"..curr_version)
+rom_loaded = false
+
+repeat
+	hash = gameinfo.getromhash()
+	for index,value in pairs(kdl_hash)
+	do
+		if(hash == kdl_hash[index])
+		then
+			rom_loaded = true
+		end
+	end
+	gui.text(5,5,"KDL ROM not loaded\nv"..curr_version,null,"bottomright")
+	emu.frameadvance()
+until(rom_loaded)
+
+print("KDL ROM detected. Hash: "..hash)
 
 initialize_checkpoints()
 
