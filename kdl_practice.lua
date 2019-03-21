@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License along with
 this program. If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-curr_version = "1.1.0-beta.20190313"
+curr_version = "1.1.0"
 
 
 --rng_seed_progression is a list of rng seed values in the order they appear in
@@ -239,7 +239,7 @@ local function update_display()
 	end
 	
 	-- check for TAS spit charge and change the background color if necessary
-	if(bit.band(memory.readbyte(0x1094,"WRAM"),4) == 4)
+	if(bit.band(memory.readbyte(0xD094),4) == 4)
 	then
 		checkpoint_string_background = "DarkRed"
 	end
@@ -306,7 +306,7 @@ repeat
 	hash = gameinfo.getromhash()
 	for index,value in pairs(kdl_hash)
 	do
-		if(hash == kdl_hash[index])
+		if(hash == value)
 		then
 			rom_loaded = true
 		end
