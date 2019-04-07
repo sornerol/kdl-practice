@@ -6,6 +6,7 @@
 
 ## Fixed
 - The script no longer crashes if it is opened when a KDL ROM is not loaded.
+- Fixed a bug with assuming which core is loaded in BizHawk.
 
 
 # v1.0.1
